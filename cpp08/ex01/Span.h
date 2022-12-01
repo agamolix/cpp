@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Span.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atrilles <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,22 +10,48 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Type.h"
+#ifndef SPAN_H
+# define SPAN_H
 
-int main (int argc, char ** argv) {
+# include <vector>
+# include <iostream>
+# include <exception>
+# include <algorithm>
+# include <numeric>
 
-	if (argc != 2) 
-	{
-		std::cout << "usage: char ('c') OR int (10) OR float (3.0f) OR double (2.0)" << std::endl;
-		return 0;
-	}
+class Span
+{
+	private:
+	unsigned int _size;
+	std::vector<int> _tab;
 
-	std::string s = argv[1];
-	char * s2 = argv[1];
+	public:
+	Span(unsigned int);
+	~Span();
+	Span(Span const &);
+	Span & operator=(Span const &);
 
-	Type t;
-	t.type(s);
-	t.print(s, s2);
+	std::vector<int> getTab();
 
-	return 0;
-}
+	void addNumber(int);
+	int longestSpan();
+	int shortestSpan();
+
+	class ExceptionFull : public std::exception {
+		const char * what() const throw();
+	};
+
+	class ExceptionNotEnoughNb : public std::exception {
+		const char * what() const throw();
+	};
+
+	void fillIteratorRange(std::vector<int>::iterator, std::vector<int>::iterator);
+	void fillAlea(unsigned int n);
+
+
+
+};
+
+
+
+#endif

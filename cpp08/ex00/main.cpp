@@ -10,22 +10,31 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Type.h"
+#include <iostream>
+#include "easyfind.h"
+#include <vector>
 
-int main (int argc, char ** argv) {
+template<typename T>
+void display(T t, int i)
+{
+	if (easyfind(t, i) == static_cast<int>(t.size()))
+		std::cout << "Search " << i << ": not found" << std::endl;
+	else
+		std::cout << "Search " << i << ": index " << easyfind(t, i) << std::endl;
+}
 
-	if (argc != 2) 
-	{
-		std::cout << "usage: char ('c') OR int (10) OR float (3.0f) OR double (2.0)" << std::endl;
-		return 0;
-	}
+int main (void) {
 
-	std::string s = argv[1];
-	char * s2 = argv[1];
+	std::vector<int> v;
+	for(int i = 0; i < 10; i++)
+		v.push_back(10 - i);
 
-	Type t;
-	t.type(s);
-	t.print(s, s2);
+	for (int i = 0; i < static_cast<int>(v.size()); i++)
+		std::cout << "v[" << i << "] = " << v[i] << std::endl;
+
+	display(v, 8);
+	display(v, 3);
+	display(v, 12);
 
 	return 0;
 }

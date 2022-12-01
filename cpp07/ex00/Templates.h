@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Templates.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atrilles <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,22 +10,31 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Type.h"
+#ifndef TEMPLATES_H
+# define TEMPLATES_H
 
-int main (int argc, char ** argv) {
-
-	if (argc != 2) 
-	{
-		std::cout << "usage: char ('c') OR int (10) OR float (3.0f) OR double (2.0)" << std::endl;
-		return 0;
-	}
-
-	std::string s = argv[1];
-	char * s2 = argv[1];
-
-	Type t;
-	t.type(s);
-	t.print(s, s2);
-
-	return 0;
+template<typename T>
+void swap(T & a, T & b)
+{
+	T temp = a;
+	a = b;
+	b = temp;
 }
+
+template<typename T>
+T & min(T & a, T & b)
+{
+	if (a < b)
+		return a;
+	return b;
+}
+
+template<typename T>
+T & max(T & a, T & b)
+{
+	if (a > b)
+		return a;
+	return b;
+}
+
+#endif

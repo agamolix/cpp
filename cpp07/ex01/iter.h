@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   iter.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atrilles <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,22 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Type.h"
+#ifndef ITER_H
+# define ITER_H
 
-int main (int argc, char ** argv) {
-
-	if (argc != 2) 
-	{
-		std::cout << "usage: char ('c') OR int (10) OR float (3.0f) OR double (2.0)" << std::endl;
-		return 0;
-	}
-
-	std::string s = argv[1];
-	char * s2 = argv[1];
-
-	Type t;
-	t.type(s);
-	t.print(s, s2);
-
-	return 0;
+template<typename T>
+void iter(T * tab, int size, void (*display)(T &)) {
+	for (int i = 0; i < size; i++)
+		display(tab[i]);
 }
+
+template<typename T>
+void display(T & element) {
+	std::cout << "Element is: " << element << std::endl;
+}
+
+#endif

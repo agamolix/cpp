@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   easyfind.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atrilles <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,22 +10,27 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Type.h"
+#ifndef EASYFIND_H
+# define EASYFIND_H
 
-int main (int argc, char ** argv) {
+# include <vector>
 
-	if (argc != 2) 
+template<typename T>
+int easyfind(T & t, int i)
+{
+	typename T::const_iterator it1 = t.begin();
+	typename T::const_iterator it2 = t.end();
+	int res = 0;
+
+	for(it1 = it1; it1 != it2; it1++)
 	{
-		std::cout << "usage: char ('c') OR int (10) OR float (3.0f) OR double (2.0)" << std::endl;
-		return 0;
+		if (* it1 == i)
+			return res;
+		res++; 
 	}
+	return res;
+};
 
-	std::string s = argv[1];
-	char * s2 = argv[1];
 
-	Type t;
-	t.type(s);
-	t.print(s, s2);
 
-	return 0;
-}
+#endif

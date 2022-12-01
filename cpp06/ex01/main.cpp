@@ -34,13 +34,17 @@ int main (void) {
 	std::cout << " i = " << ptr1->i << std::endl;
 	std::cout << " s = " << ptr1->s << std::endl;
 
+	std::cout << "--------- Serialize ptr1 --------" << std::endl;
 	uintptr_t address = serialize(ptr1);
 	std::cout << " address = " << address << std::endl;
 	
+	std::cout << "--------- Deserialize -----------" << std::endl;
 	Data * ptr2 = deserialize(address);
 	std::cout << " i = " << ptr2->i << std::endl;
 	std::cout << " s = " << ptr2->s << std::endl;
 
+
+	std::cout << "--------- New values ------------" << std::endl;
 	ptr1->i = 20;
 	ptr1->s = "def";
 

@@ -10,22 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Type.h"
+#include <iostream>
+#include "iter.h"
 
-int main (int argc, char ** argv) {
+int main (void) {
 
-	if (argc != 2) 
-	{
-		std::cout << "usage: char ('c') OR int (10) OR float (3.0f) OR double (2.0)" << std::endl;
-		return 0;
-	}
-
-	std::string s = argv[1];
-	char * s2 = argv[1];
-
-	Type t;
-	t.type(s);
-	t.print(s, s2);
+	int tab1[] = {1, 2, 3, 4, 5};
+	char tab2[] = {'a', 'b', 'c', 'd', 'e'};
+	std::string tab3[] = {"le", "petit", "chat", "se", "promene"};
+	
+	iter(tab1, 5, display);
+	std::cout << "--------------------------------" <<	std::endl;
+	iter(tab2, 5, display);
+	std::cout << "--------------------------------" <<	std::endl;
+	iter(tab3, 5, display);
 
 	return 0;
 }

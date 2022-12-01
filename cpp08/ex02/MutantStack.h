@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   MutantStack.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atrilles <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,22 +10,29 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Type.h"
+#ifndef MUTANTSTACK_H
+# define MUTANTSTACK_H
 
-int main (int argc, char ** argv) {
+# include <iostream>
+# include <stack>
 
-	if (argc != 2) 
-	{
-		std::cout << "usage: char ('c') OR int (10) OR float (3.0f) OR double (2.0)" << std::endl;
-		return 0;
-	}
+template<typename T>
+class MutantStack: public std::stack<T>
+{
+	public:
+	MutantStack() { std::cout << "Default contructor" << std::endl; }
+	~MutantStack() { std::cout << "Destructor" << std::endl; }
+	MutantStack<T>(MutantStack<T> const & instance) {
+		*this = instance; }
+	MutantStack<T> & operator=(MutantStack<T> const & instance) { 
+		(void) instance;
+		return *this; }
 
-	std::string s = argv[1];
-	char * s2 = argv[1];
+	typedef typename std::stack<T>::container_type::iterator iterator;
+	iterator begin() { return this->c.begin(); }
+	iterator end() { return this->c.end(); }
+};
 
-	Type t;
-	t.type(s);
-	t.print(s, s2);
 
-	return 0;
-}
+
+#endif
