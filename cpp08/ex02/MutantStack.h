@@ -22,10 +22,13 @@ class MutantStack: public std::stack<T>
 	public:
 	MutantStack() { std::cout << "Default contructor" << std::endl; }
 	~MutantStack() { std::cout << "Destructor" << std::endl; }
-	MutantStack<T>(MutantStack<T> const & instance) {
+//	MutantStack<T>(MutantStack<T> const & instance) {
+//		*this = instance; }
+	MutantStack(MutantStack<T> const & instance) {
 		*this = instance; }
+
 	MutantStack<T> & operator=(MutantStack<T> const & instance) { 
-		(void) instance;
+		this->c = instance.c;
 		return *this; }
 
 	typedef typename std::stack<T>::container_type::iterator iterator;
