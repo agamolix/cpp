@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MutantStack.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atrilles <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: atrilles <atrilles@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 19:35:18 by atrilles          #+#    #+#             */
-/*   Updated: 2022/02/03 16:27:03 by atrilles         ###   ########.fr       */
+/*   Updated: 2022/12/22 15:37:04 by atrilles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ class MutantStack: public std::stack<T>
 	public:
 	MutantStack() { std::cout << "Default contructor" << std::endl; }
 	~MutantStack() { std::cout << "Destructor" << std::endl; }
-//	MutantStack<T>(MutantStack<T> const & instance) {
-//		*this = instance; }
 	MutantStack(MutantStack<T> const & instance) {
 		*this = instance; }
 

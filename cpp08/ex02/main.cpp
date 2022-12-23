@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atrilles <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: atrilles <atrilles@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 19:35:18 by atrilles          #+#    #+#             */
-/*   Updated: 2022/02/03 16:27:03 by atrilles         ###   ########.fr       */
+/*   Updated: 2022/12/22 15:42:18 by atrilles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 #include <list>
 
 int main (void) {
+
+	std::cout << "==============================" << std::endl;
+	std::cout << "=           STACK            =" << std::endl;
+	std::cout << "==============================" << std::endl;
 
 	MutantStack<int> m1;
 
@@ -42,14 +46,11 @@ int main (void) {
 	mstack.push(3);
 	mstack.push(5);
 	mstack.push(737);
-	mstack.push(0);
+	mstack.push(10);
 
 	MutantStack<int>::iterator it = mstack.begin();
 	MutantStack<int>::iterator ite = mstack.end();
-
-	std::cout << "begin: " << *it << std::endl;
-	std::cout << "end: " << *ite << std::endl;
-
+		
 	++it;
 	--it;
 
@@ -59,6 +60,8 @@ int main (void) {
 		++it;
 	}
 
+	std::cout << "==============================" << std::endl;
+	std::cout << "=           LIST             =" << std::endl;
 	std::cout << "==============================" << std::endl;
 
 	std::list<int> li;
@@ -73,14 +76,10 @@ int main (void) {
 	li.push_back(3);
 	li.push_back(5);
 	li.push_back(737);
-	li.push_back(0);
+	li.push_back(10);
 
-// POURQUOI END MARCHE PAS??
 	std::list<int>::iterator itl = li.begin();
 	std::list<int>::iterator itle = li.end();
-
-	std::cout << "begin: " << *itl << std::endl;
-	std::cout << "end: " << *itle << std::endl;
 
 	++itl;
 	--itl;
@@ -91,6 +90,8 @@ int main (void) {
 		++itl;
 	}
 
+	std::cout << "==============================" << std::endl;
+	std::cout << "=           STACK            =" << std::endl;
 	std::cout << "==============================" << std::endl;
 
 	MutantStack<int> m2;
