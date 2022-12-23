@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atrilles <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: atrilles <atrilles@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 19:35:18 by atrilles          #+#    #+#             */
-/*   Updated: 2022/02/03 16:27:03 by atrilles         ###   ########.fr       */
+/*   Updated: 2022/12/08 12:56:31 by atrilles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ Fixed & Fixed::operator=(Fixed const & instance) {
 }
 
 int Fixed::getRawBits(void) const {
-//	std::cout << "getRawBits member function called" << std::endl;
+	std::cout << "getRawBits member function called" << std::endl;
 	return (this->_integer);
 }
 
@@ -73,7 +73,6 @@ int Fixed::toInt(void) const
 
 std::ostream & operator<<(std::ostream & o, Fixed const & instance)
 {
-//	o << instance.getRawBits() << std::endl;
 	o << instance.toFloat();
 	return o;
 }
