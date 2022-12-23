@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atrilles <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: atrilles <atrilles@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 19:35:18 by atrilles          #+#    #+#             */
-/*   Updated: 2022/02/03 16:27:03 by atrilles         ###   ########.fr       */
+/*   Updated: 2022/12/23 11:49:05 by atrilles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@
 template<typename T>
 void display(T t, int i)
 {
-	if (easyfind(t, i) == static_cast<int>(t.size()))
+	if (easyfind(t, i) == t.end())
 		std::cout << "Search " << i << ": not found" << std::endl;
 	else
-		std::cout << "Search " << i << ": index " << easyfind(t, i) << std::endl;
+		std::cout << "Search " << i << ": index " << (easyfind(t, i) - t.begin()) << std::endl;
 }
 
 int main (void) {
