@@ -30,8 +30,6 @@ AAnimal::~AAnimal(void) {
 
 AAnimal & AAnimal::operator=(AAnimal const & instance) {
 	this->type = instance.type;
-//	if (this->type == "Cat" || this->type == "Dog")
-				
 	std::cout << "AAnimal created by operator =" << std::endl;
 	return *this;
 }
