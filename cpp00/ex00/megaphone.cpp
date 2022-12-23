@@ -13,12 +13,8 @@
 #include <iostream>
 
 char up(char c)
-{
-	if (c >= 'a' && c <= 'z')
-	{
-		c = 'A' - 'a' + c;
-	}
-	return c;
+{	
+	return std::toupper(c);
 }
 
 int main(int argc, char **argv)
