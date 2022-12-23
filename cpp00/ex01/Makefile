@@ -6,17 +6,17 @@
 #    By: atrilles <atrilles@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/16 17:07:37 by atrilles          #+#    #+#              #
-#    Updated: 2022/05/27 12:36:01 by atrilles         ###   ########.fr        #
+#    Updated: 2022/12/06 17:21:34 by atrilles         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 ######## PROJECT ###############################################################
 
-NAME = phonebook
+NAME = phone
 
 ######## SOURCE FILES ##########################################################
 
-SRC_FILES =		phonebook  PhoneBook.class  Contact.class
+SRC_FILES =		main 	PhoneBook  Contact
 
 #SRC = $(addsuffix .c, $(SRC_FILES))
 OBJ = $(addsuffix .o, $(SRC_FILES))
