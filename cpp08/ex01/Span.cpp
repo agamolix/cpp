@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atrilles <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: atrilles <atrilles@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 19:35:18 by atrilles          #+#    #+#             */
-/*   Updated: 2022/02/03 16:27:03 by atrilles         ###   ########.fr       */
+/*   Updated: 2022/12/22 15:29:16 by atrilles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ Span & Span::operator=(Span const & instance) {
 	return *this;
 }
 
-std::vector<int> Span::getTab() {
+std::vector<int> & Span::getTab() {
 	return (this->_tab);
 }
 
@@ -72,17 +72,11 @@ const char * Span::ExceptionNotEnoughNb::what(void) const throw() {
 }
 
 void Span::fillIteratorRange(std::vector<int>::iterator it1, std::vector<int>::iterator it2) {
-	std::vector<int>::iterator it;
-	for (it = it1; it != it2; it++)
-		std::cout << "it = " << *it << std::endl;
-	std::vector<int>::iterator itt;
 	this->_tab.assign(it1, it2);
-//	this->_tab.insert(this->_tab.end(), it1, it2);
 }
 
 void Span::fillAlea(unsigned int n) {
 	for (unsigned i = 0; i < n; i++)
 		this->_tab.push_back(rand() / 1000);
-//		std::cout << rand() << std::endl;
 }
 
