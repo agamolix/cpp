@@ -61,7 +61,7 @@ void Bureaucrat::increment() {
 	if (this->_grade == 1)
 		throw Bureaucrat::GradeTooHighException();
 	this->_grade--;
-	std::cout << "Le grade de " << this->_name << "est maintenant" << this->_grade << std::endl;
+	std::cout << "Le grade de " << this->_name << " est maintenant" << this->_grade << std::endl;
 }
 
 void Bureaucrat::decrement() {
